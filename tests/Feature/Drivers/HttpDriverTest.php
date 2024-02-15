@@ -619,29 +619,29 @@ class HttpDriverTest extends TestCase
         });
     }
 
-    public function allFaviconLinksInHtmlProvider(): array
+    public static function allFaviconLinksInHtmlProvider(): array
     {
         return [
             [
-                $this->htmlOptionOne(),
+                static::htmlOptionOne(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/icon/is/here.ico'))->setIconType(Favicon::TYPE_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionTwo(),
+                static::htmlOptionTwo(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/icon/is/here.ico'))->setIconType(Favicon::TYPE_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionThree(),
+                static::htmlOptionThree(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/icon/is/here.ico'))->setIconType(Favicon::TYPE_SHORTCUT_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionFour(),
+                static::htmlOptionFour(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/favicon/favicon-32x32.png'))->setIconSize(null)->setIconType(Favicon::TYPE_ICON),
                     (new Favicon('https://example.com', 'https://example.com/favicon/apple-icon-57x57.png'))->setIconSize(57)->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON),
@@ -657,48 +657,48 @@ class HttpDriverTest extends TestCase
                 ]),
             ],
             [
-                $this->htmlOptionFive(),
+                static::htmlOptionFive(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/icon/is/here.ico'))->setIconType(Favicon::TYPE_SHORTCUT_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionSix(),
+                static::htmlOptionSix(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/images/apple-icon-180x180.png'))->setIconSize(180)->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON),
                     (new Favicon('https://example.com', 'https://example.com/images/favicon.ico'))->setIconType(Favicon::TYPE_SHORTCUT_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionSeven(),
+                static::htmlOptionSeven(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/images/apple-icon-180x180.png'))->setIconSize(180)->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON),
                     (new Favicon('https://example.com', 'https://example.com/images/favicon.ico'))->setIconType(Favicon::TYPE_SHORTCUT_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionEight(),
+                static::htmlOptionEight(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/images/apple-icon-180x180.png'))->setIconSize(180)->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON),
                     (new Favicon('https://example.com', 'https://example.com/images/favicon.ico'))->setIconType(Favicon::TYPE_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionNine(),
+                static::htmlOptionNine(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/images/apple-icon-180x180.png'))->setIconSize(180)->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON),
                     (new Favicon('https://example.com', 'https://example.com/images/favicon.ico'))->setIconType(Favicon::TYPE_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionTen(),
+                static::htmlOptionTen(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://www.example.com/favicon123.png'))->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON),
                     (new Favicon('https://example.com', 'https://www.example.com/favicon123.ico'))->setIconType(Favicon::TYPE_SHORTCUT_ICON),
                 ]),
             ],
             [
-                $this->htmlOptionEleven(),
+                static::htmlOptionEleven(),
                 FaviconCollection::make([
                     (new Favicon('https://example.com', 'https://example.com/apple-icon-57x57.png'))->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON)->setIconSize(57),
                     (new Favicon('https://example.com', 'https://example.com/apple-icon-60x60.png'))->setIconType(Favicon::TYPE_APPLE_TOUCH_ICON)->setIconSize(60),
@@ -717,25 +717,25 @@ class HttpDriverTest extends TestCase
         ];
     }
 
-    public function faviconLinksInHtmlProvider(): array
+    public static function faviconLinksInHtmlProvider(): array
     {
         return [
-            [$this->htmlOptionOne(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_ICON],
-            [$this->htmlOptionTwo(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_ICON],
-            [$this->htmlOptionThree(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_SHORTCUT_ICON],
-            [$this->htmlOptionFour(), 'https://example.com/favicon/favicon-32x32.png', null, Favicon::TYPE_ICON],
-            [$this->htmlOptionFive(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_SHORTCUT_ICON],
-            [$this->htmlOptionSix(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_SHORTCUT_ICON],
-            [$this->htmlOptionSeven(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_SHORTCUT_ICON],
-            [$this->htmlOptionEight(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_ICON],
-            [$this->htmlOptionNine(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_ICON],
-            [$this->htmlOptionTen(), 'https://www.example.com/favicon123.ico', null, Favicon::TYPE_SHORTCUT_ICON],
-            [$this->htmlOptionEleven(), 'https://example.com/android-icon-192x192.png', 192, Favicon::TYPE_ICON],
-            [$this->htmlOptionTwelve(), 'https://example.com/android-icon-192x192.png', 192, Favicon::TYPE_ICON],
+            [static::htmlOptionOne(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_ICON],
+            [static::htmlOptionTwo(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_ICON],
+            [static::htmlOptionThree(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_SHORTCUT_ICON],
+            [static::htmlOptionFour(), 'https://example.com/favicon/favicon-32x32.png', null, Favicon::TYPE_ICON],
+            [static::htmlOptionFive(), 'https://example.com/icon/is/here.ico', null, Favicon::TYPE_SHORTCUT_ICON],
+            [static::htmlOptionSix(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_SHORTCUT_ICON],
+            [static::htmlOptionSeven(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_SHORTCUT_ICON],
+            [static::htmlOptionEight(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_ICON],
+            [static::htmlOptionNine(), 'https://example.com/images/favicon.ico', null, Favicon::TYPE_ICON],
+            [static::htmlOptionTen(), 'https://www.example.com/favicon123.ico', null, Favicon::TYPE_SHORTCUT_ICON],
+            [static::htmlOptionEleven(), 'https://example.com/android-icon-192x192.png', 192, Favicon::TYPE_ICON],
+            [static::htmlOptionTwelve(), 'https://example.com/android-icon-192x192.png', 192, Favicon::TYPE_ICON],
         ];
     }
 
-    private function htmlOptionOne(): string
+    private static function htmlOptionOne(): string
     {
         return <<<'HTML'
             <html lang="en">
@@ -744,7 +744,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionTwo(): string
+    private static function htmlOptionTwo(): string
     {
         return <<<'HTML'
             <html lang="en">
@@ -753,7 +753,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionThree(): string
+    private static function htmlOptionThree(): string
     {
         return <<<'HTML'
             <html lang="en">
@@ -762,7 +762,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionFour(): string
+    private static function htmlOptionFour(): string
     {
         return <<<'HTML'
             <html lang="en">
@@ -771,7 +771,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionFive(): string
+    private static function htmlOptionFive(): string
     {
         return <<<'HTML'
             <html lang="en">
@@ -780,14 +780,14 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionSix(): string
+    private static function htmlOptionSix(): string
     {
         return <<<'HTML'
             <head> <title>Title here</title> <meta name="description" content="Meta description here"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <link rel="alternate" href="https://www.example.lv" hreflang="lv"> <link rel="alternate" href="https://www.example.lt/" hreflang="lt"> <link rel="alternate" href="https://www.example.ee/" hreflang="ee"> <link rel="alternate" href="https://www.example.ru/" hreflang="ru"> <link rel="alternate" href="https://www.example.com/en/" hreflang="en"> <link rel="alternate" href="https://www.example.com/default" hreflang="x-default"> <meta name="theme-color" content="#FFFFFF"> <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png"> <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"> <link rel="stylesheet" href="/css/app.css?id=123"> <script src="/vendor/livewire/livewire.js?id=456" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >
         HTML;
     }
 
-    private function htmlOptionSeven(): string
+    private static function htmlOptionSeven(): string
     {
         return <<<'HTML'
             <head>
@@ -812,14 +812,14 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionEight(): string
+    private static function htmlOptionEight(): string
     {
         return <<<'HTML'
             <head> <title>Title here</title> <meta name="description" content="Meta description here"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <link rel="alternate" href="https://www.example.lv" hreflang="lv"> <link rel="alternate" href="https://www.example.lt/" hreflang="lt"> <link rel="alternate" href="https://www.example.ee/" hreflang="ee"> <link rel="alternate" href="https://www.example.ru/" hreflang="ru"> <link rel="alternate" href="https://www.example.com/en/" hreflang="en"> <link rel="alternate" href="https://www.example.com/default" hreflang="x-default"> <meta name="theme-color" content="#FFFFFF"> <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png"> <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> <link rel="stylesheet" href="/css/app.css?id=123"> <script src="/vendor/livewire/livewire.js?id=456" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >
         HTML;
     }
 
-    private function htmlOptionNine(): string
+    private static function htmlOptionNine(): string
     {
         return <<<'HTML'
             <head>
@@ -844,7 +844,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionTen(): string
+    private static function htmlOptionTen(): string
     {
         return <<<'HTML'
             <head>
@@ -858,7 +858,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionEleven(): string
+    private static function htmlOptionEleven(): string
     {
         return <<<'HTML'
             <head>
@@ -885,7 +885,7 @@ class HttpDriverTest extends TestCase
         HTML;
     }
 
-    private function htmlOptionTwelve(): string
+    private static function htmlOptionTwelve(): string
     {
         return <<<'HTML'
             <head>
