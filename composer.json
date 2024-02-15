@@ -23,7 +23,7 @@
     "illuminate/filesystem": "^9.0|^10.0",
     "illuminate/http": "^9.0|^10.0",
     "guzzlehttp/guzzle": "^7.4",
-    "symfony/dom-crawler": "^6.3"
+    "symfony/dom-crawler": "^7.0"
   },
   "require-dev": {
     "mockery/mockery": "^1.0",
@@ -38,7 +38,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-        "AshAllenDesign\\FaviconFetcher\\Tests\\": "tests/"
+      "AshAllenDesign\\FaviconFetcher\\Tests\\": "tests/"
     }
   },
   "extra": {
